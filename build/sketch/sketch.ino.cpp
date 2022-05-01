@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#line 1 "c:\\Users\\anand\\Desktop\\final\\sketch.ino"
+#line 1 "c:\\Users\\anand\\Desktop\\atmos\\sketch.ino"
 
 #define BLYNK_TEMPLATE_ID "TMPLzOCxWyV6"
 #define BLYNK_DEVICE_NAME "atmos"
@@ -40,13 +40,6 @@ DHT dht(DHTPIN, DHTTYPE);
 LiquidCrystal_I2C lcd(LCD_I2C_ADDRESS, LCD_DISP_COLS, LCD_DISP_ROWS);
 BlynkTimer timer;
 
-#line 41 "c:\\Users\\anand\\Desktop\\final\\sketch.ino"
-void sendSensor();
-#line 54 "c:\\Users\\anand\\Desktop\\final\\sketch.ino"
-void setup();
-#line 94 "c:\\Users\\anand\\Desktop\\final\\sketch.ino"
-void loop();
-#line 41 "c:\\Users\\anand\\Desktop\\final\\sketch.ino"
 void sendSensor()
 {
   float temperature = dht.readTemperature();
@@ -57,7 +50,7 @@ void sendSensor()
   Blynk.virtualWrite(V20, ((float)analogRead(Pin7) * 100 / 4096));
   Blynk.virtualWrite(V21, ((float)analogRead(Pin2) * 100 / 4096));
   Blynk.virtualWrite(V22, ((float)analogRead(Pin5) * 100 / 4096));
-  Blynk.virtualWrite(V23, (analogReadMilliVolts(27));
+  Blynk.virtualWrite(V23, analogReadMilliVolts(27));
 }
 
 void setup()
